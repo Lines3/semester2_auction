@@ -1,4 +1,4 @@
-import { CONFIG } from "./config.js";
+// import { CONFIG } from "./config.js";
 const formRegister = document.querySelector(".btn-primary");
 console.log(formRegister);
 const loginErrorMessage = document.querySelector(".loginErrorMessage");
@@ -12,7 +12,8 @@ const loginErrorMessage = document.querySelector(".loginErrorMessage");
  * ```
  */
 
-const apiUrl = CONFIG.apiUrl;
+// const apiUrl = CONFIG.apiUrl;
+const apiUrl = "https://v2.api.noroff.dev";
 
 async function registerUser(url, userData) {
   try {
