@@ -123,7 +123,7 @@ function registerClick() {
 
   function goToLoggedListings(response) {
     if (response.status === 200) {
-      window.location.href = "listingsLogin.html";
+      window.location.href = "my_page.html";
     } else {
       console.log("ikke bruker");
     }
