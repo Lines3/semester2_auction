@@ -75,13 +75,13 @@ function registerClick() {
     event.preventDefault();
     console.log("Clicked");
 
-    const loginName = document.querySelector(".name").value;
+    // const loginName = document.querySelector("#name").value;
     // console.log(loginName);
 
-    const loginEmail = document.querySelector(".email").value;
+    const loginEmail = document.querySelector("#email").value;
     // console.log(loginEmail);
 
-    const loginPassword = document.querySelector(".password").value;
+    const loginPassword = document.querySelector("#password").value;
     // console.log(loginPassword);
 
     const loginInfo = {
