@@ -1,4 +1,4 @@
-// import { CONFIG } from "./config.js";
+import { CONFIG } from "./config.js";
 const formRegister = document.querySelector(".btn-primary");
 console.log(formRegister);
 const loginErrorMessage = document.querySelector(".loginErrorMessage");
