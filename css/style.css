@@ -1,0 +1,157 @@
+.error {
+  color: rgb(212, 24, 24);
+}
+
+.login-form {
+  margin-bottom: 3rem;
+  /* max-width: 80%; */
+  display: flex;
+  /* align-items: center; */
+}
+
+h1 {
+  margin-bottom: 3rem;
+}
+
+/*or all pages */
+
+.btn-primary {
+  --bs-btn-bg: #1f614d;
+  --bs-btn-border-color: #1f614d;
+  --bs-btn-hover-bg: #48dcb9;
+  --bs-btn-hover-border-color: #48dcb9;
+  --bs-btn-active-bg: #48dcb9;
+  --bs-btn-active-border-color: #48dcb9;
+}
+
+:root {
+  --bs-primary: #1f614d;
+  --bs-secondary: #48dcb9;
+  --bs-primary-rgb: 31, 97, 77;
+  --bs-secondary-rgb: 72, 220, 185;
+  --bs-emphasis-color: #1f614d;
+  --bs-emphasis-color-rgb: 31, 97, 77;
+}
+
+.btn-outline-success {
+  --bs-btn-bg: #1f614d;
+  --bs-btn-border-color: #1f614d;
+  --bs-btn-hover-bg: #48dcb9;
+  --bs-btn-hover-border-color: #48dcb9;
+  --bs-btn-active-bg: #48dcb9;
+  --bs-btn-active-border-color: #48dcb9;
+}
+
+main {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.navbar-colour {
+  --bs-white: #fff;
+}
+
+.navbar-nav {
+  justify-content: center;
+  margin: auto;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+  margin-left: 3rem;
+}
+
+.form-inline {
+  background-color: #1f614d;
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.form-control {
+  height: 2.2rem;
+}
+
+.btn-outline-success {
+  margin-left: 0.5rem;
+  color: #ffff;
+  border-color: rgb(72, 220, 185, 0.2);
+  box-shadow: 0.05rem 0.05rem 0.2rem rgb(72, 220, 185);
+  height: 2.2rem;
+}
+
+.navbar-toggler {
+  height: 2.5rem;
+}
+
+.navbar-toggler-icon {
+  color: blue;
+}
+
+.bi-person {
+  font-size: 2.2rem;
+  color: #1f614d;
+  padding-right: 1rem;
+}
+
+.container-fluid {
+  height: 3rem;
+}
+
+.nav-elements {
+  display: flex;
+  align-items: center;
+}
+
+.footer-link {
+  color: #ffff;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a:hover {
+  color: #48dcb9;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #1f614d;
+  height: 22rem;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.footerinfo {
+  color: #ffff;
+  padding-left: 1rem;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social-link {
+  text-decoration: none;
+  color: #ffff;
+  padding-bottom: 2rem;
+}
+
+.bi-facebook,
+.bi-youtube,
+.bi-instagram,
+.bi-linkedin {
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.copyright {
+  padding-top: 2rem;
+  justify-content: center;
+  display: flex;
+  padding-bottom: 1rem;
+}
