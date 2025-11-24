@@ -85,7 +85,7 @@ function registerClick() {
     // console.log(loginPassword);
 
     const loginInfo = {
-      name: loginName,
+      //   name: loginName,
       email: loginEmail,
       password: loginPassword,
     };
