@@ -12,8 +12,7 @@ const loginErrorMessage = document.querySelector(".loginErrorMessage");
  * ```
  */
 
-// const apiUrl = CONFIG.apiUrl;
-const apiUrl = "https://v2.api.noroff.dev";
+const apiUrl = CONFIG.apiUrl;
 
 async function registerUser(url, userData) {
   try {
@@ -46,14 +45,13 @@ const registerUrl = `${apiUrl}/auth/register`;
 async function getWithToken(url) {
   try {
     const token = localStorage.getItem("accessToken");
-    const netlifyKey = process.env.API_KEY;
     console.log(token);
     const fetchOptions = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
-        "X-Noroff-API-Key": netlifyKey,
+        "X-Noroff-API-Key": CONFIG.apiKey,
       },
     };
     console.log(fetchOptions);
