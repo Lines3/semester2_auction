@@ -109,6 +109,10 @@ main {
   gap: 1rem;
 }
 
+.already-user {
+  margin-bottom: 1.5rem;
+}
+
 .not-registered {
   padding-right: 10rem;
   background-color: #1f614d;
