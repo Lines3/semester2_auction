@@ -14,34 +14,6 @@ const loginErrorMessage = document.querySelector(".loginErrorMessage");
 
 const apiUrl = CONFIG.apiUrl;
 
-async function registerUser(url, userData) {
-  try {
-    const postData = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    };
-    const response = await fetch(url, postData);
-    console.log(response);
-    const json = await response.json();
-    console.log(json);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-const newUser = {
-  name: "line_test2",
-  email: "line_test2@stud.noroff.no",
-  password: "linetestnoroff2",
-};
-
-const registerUrl = `${apiUrl}/auth/register`;
-
-// registerUser(registerUrl, newUser);
-
 async function getWithToken(url) {
   try {
     const token = localStorage.getItem("accessToken");
@@ -68,7 +40,7 @@ const profilesUrl = `${apiUrl}/auction/profiles`;
 
 getWithToken(profilesUrl);
 
-function registerClick() {
+function loginClick() {
   formRegister.addEventListener("click", (event) => {
     event.preventDefault();
     console.log("Clicked");
@@ -116,9 +88,76 @@ function registerClick() {
     //   password: "linetestnoroff2",
     // };
 
+    // anotherUser:
+    // name: nametest
+    // email: line_test3@stud.noroff.no
+    // password: linetestnoroff3
+
     const loginUrl = `${apiUrl}/auth/login`;
 
     loginUser(loginUrl, loginInfo);
+  });
+
+  function goToLoggedListings(response) {
+    if (response.status === 200) {
+      window.location.href = "my_page.html";
+    } else {
+      console.log("ikke bruker");
+    }
+  }
+}
+
+loginClick();
+
+function registerClick() {
+  formRegister.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log("Clicked");
+
+    const loginName = document.querySelector("#name").value;
+    // console.log(loginName);
+
+    const loginEmail = document.querySelector("#email").value;
+    // console.log(loginEmail);
+
+    const loginPassword = document.querySelector("#password").value;
+    // console.log(loginPassword);
+
+    const registerinInfo = {
+      name: loginName,
+      email: loginEmail,
+      password: loginPassword,
+    };
+    console.log(registerinInfo);
+
+    async function registerUser(url, userData) {
+      try {
+        const postData = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        };
+        const response = await fetch(url, postData);
+        console.log(response);
+        const json = await response.json();
+        console.log(json);
+        goToLoggedListings(response);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    // const newUser = {
+    //   name: "line_test2",
+    //   email: "line_test2@stud.noroff.no",
+    //   password: "linetestnoroff2",
+    // };
+
+    const registerUrl = `${apiUrl}/auth/register`;
+
+    registerUser(registerUrl, registerinInfo);
   });
 
   function goToLoggedListings(response) {

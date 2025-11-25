@@ -13,7 +13,7 @@ h1 {
   margin-bottom: 3rem;
 }
 
-/*or all pages */
+/*for all pages */
 
 .btn-primary {
   --bs-btn-bg: #1f614d;
@@ -104,6 +104,20 @@ main {
   align-items: center;
 }
 
+.register-link {
+  display: flex;
+  gap: 1rem;
+}
+
+.not-registered {
+  padding-right: 10rem;
+  background-color: #1f614d;
+}
+
+a {
+  color: #1f614d;
+}
+
 .footer-link {
   color: #ffff;
   text-decoration: none;
@@ -123,6 +137,7 @@ footer {
   height: 22rem;
   width: 100%;
   padding-top: 1rem;
+  margin-top: 1rem;
 }
 
 .footerinfo {
