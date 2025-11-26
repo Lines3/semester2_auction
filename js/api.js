@@ -36,7 +36,7 @@ export async function showListings(url) {
       cardText.textContent = data[i].description;
       const listingLink = document.createElement("a");
       listingLink.classList.add("listing-link");
-      listingLink.href = `/singleListing.html?id=${data[i].id}`;
+      listingLink.href = `/single_Listing.html?id=${data[i].id}`;
       // console.log(listingLink);
 
       const media = data[i].media;
@@ -76,9 +76,3 @@ export async function showListings(url) {
 const listingsUrl = `${apiUrl}/auction/listings`;
 
 showListings(listingsUrl);
-
-function getQueryParam(param) {
-  const queryString = window.location.search;
-  const params = new URLSearchParams(queryString);
-  return params.get(param);
-}

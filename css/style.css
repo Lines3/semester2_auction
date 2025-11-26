@@ -122,6 +122,19 @@ a {
   color: #1f614d;
 }
 
+.single-listing-heading {
+}
+
+#listing-container img {
+  max-width: 50%;
+  height: auto;
+}
+
+#listing-container {
+  display: flex;
+  justify-content: center;
+}
+
 .footer-link {
   color: #ffff;
   text-decoration: none;
