@@ -1,6 +1,25 @@
 import { CONFIG } from "./config.js";
+import { displayErrorMessage } from "./errorMessage.js";
+import { checkLogin } from "./biBi.js";
 
-// // New code start
+checkLogin();
+
+export function userLoggedIn() {
+  console.log("user is logged in");
+
+  const loggedIn = localStorage.getItem("accessToken");
+
+  if (loggedIn) {
+    getParam("id");
+    displayBids();
+    displayListing();
+  } else {
+    const userNotLoggedIn = document.querySelector(".notLoggedIn");
+    window.location.href = "/login.html";
+  }
+}
+
+userLoggedIn();
 
 export function getParam(param) {
   const queryString = window.location.search;
@@ -10,7 +29,7 @@ export function getParam(param) {
   return params.get(param);
 }
 
-getParam("id");
+// getParam("id");
 
 export async function getListing(id) {
   if (!id) {
@@ -30,6 +49,55 @@ export async function getListing(id) {
   return json;
 }
 
+export async function getBids(id) {
+  if (!id) {
+    throw new Error("No id provided");
+  }
+
+  const url = `${CONFIG.apiUrl}/auction/listings/${id}?_bids=true`;
+  console.log(url);
+
+  const response = await fetch(url);
+  const json = await response.json();
+  console.log(json);
+
+  if (!response.ok) {
+    throw new Error(json.errors?.[0]?.message || "Fetching listing failed");
+  }
+  console.log(json);
+  return json;
+}
+
+export async function displayBids() {
+  const id = getParam("id");
+  console.log(id);
+
+  if (!id) {
+    window.location.href = "/";
+  }
+  const container = document.querySelector("#listing-container");
+
+  try {
+    const allBids = await getBids(id);
+    console.log(allBids);
+
+    const bids = allBids.data.bids;
+    console.log(bids);
+    bids.forEach((bid) => {
+      console.log("bidder:" + bid.bidder.name);
+      updateBidAmount(bid.amount);
+      updateBidder(bid.bidder.name);
+    });
+  } catch (error) {
+    console.log(error);
+    displayErrorMessage();
+  }
+}
+
+displayBids();
+
+//jjjj
+
 export function updateHeading(newHeading) {
   const heading = document.querySelector("h1");
   if (heading) {
@@ -48,12 +116,21 @@ export function updateTitle(newTitle) {
   document.title = newTitle;
 }
 
-export function updateDescriptionText(newText) {
-  document.description = newText;
+export function updateBidAmount(newBids) {
+  const showbids = document.querySelector("h3");
+  if (showbids) {
+    showbids.textContent = `Listing bids: ${newBids}`;
+  }
+}
+
+export function updateBidder(newBidder) {
+  const showbids = document.querySelector("h4");
+  if (showbids) {
+    showbids.textContent = `Name of bidder: ${newBidder}`;
+  }
 }
 
 export function renderListing(container, listing) {
-  //   container.innerHTML = "";
   const img = document.createElement("img");
   console.log(listing);
   img.src = listing.url;
@@ -73,6 +150,7 @@ export async function displayListing() {
 
   try {
     const listing = await getListing(id);
+
     const { title } = listing.data;
     const { description } = listing.data;
     console.log(description);
@@ -81,12 +159,9 @@ export async function displayListing() {
     updateTitle(title);
     renderListing(container, listing.data.media[0]);
     updateDescription(description);
-    updateDescriptionText(description);
   } catch (error) {
     console.log(error);
-    // displayMessage(container, "error", error.message);
+    displayErrorMessage();
   }
 }
 displayListing();
-
-// // new code end

@@ -1,4 +1,8 @@
 import { CONFIG } from "./config.js";
+import { displayErrorMessage } from "./errorMessage.js";
+import { checkLogin } from "./biBi.js";
+
+checkLogin();
 
 const apiUrl = CONFIG.apiUrl;
 
@@ -68,8 +72,7 @@ export async function showListings(url) {
     }
   } catch (error) {
     console.log(error);
-    const listingsError = document.querySelector(".listingsError");
-    listingsError.innerHTML = "Uuups";
+    displayErrorMessage();
   }
 }
 

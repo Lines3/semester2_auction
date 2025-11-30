@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="nav-elements">
-            <a href="/my_page.html" class="my-page-icon-link">
+            <a href="" id="myPageLink" class="my-page-icon-link">
               <i class="bi bi-person text-primary"></i
             ></a>
 
@@ -72,10 +72,11 @@
 
     <main>
       <h1>Log in at The Auction</h1>
+      <div class="displayErrorMessage"></div>
 
       <div class="loginErrorMessage"></div>
       <div class="login-form">
-        <form>
+        <form class="loginForm">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"
               >Email address</label
@@ -87,7 +88,7 @@
               aria-describedby="emailHelp"
             />
             <div id="emailHelp" class="form-text">
-              We'll never share your email with anyone else.
+              Enter a valid Noroff email address.
             </div>
           </div>
           <div class="mb-3">
@@ -95,6 +96,7 @@
               >Password</label
             >
             <input type="password" class="form-control" id="password" />
+            <div id="passwordHelp" class="form-text">Enter a password.</div>
           </div>
           <div class="mb-3 form-check">
             <div class="register-link">
@@ -112,16 +114,22 @@
           <a href="/index.html" class="footer-link">Home</a>
         </li>
         <li>
-          <a href="/listingsLogIn.html" class="footer-link">Listings</a>
+          <a href="/logout.html" class="footer-link">Logout</a>
         </li>
         <li>
-          <a href="/listingsLogIn.html" class="footer-link">My page</a>
+          <a href="/index.html" class="footer-link">Listings</a>
         </li>
         <li>
-          <a href="/listingsLogIn.html" class="footer-link">Create listing</a>
+          <a href="/my_page.html" class="footer-link">My page</a>
         </li>
         <li>
-          <a href="/listingsLogIn.html" class="footer-link">Register</a>
+          <a href="/create_listing.html" class="footer-link">Create listing</a>
+        </li>
+        <li>
+          <a href="/register.html" class="footer-link">Register</a>
+        </li>
+        <li>
+          <a href="/login.html" class="footer-link">Login</a>
         </li>
       </ul>
       <div class="footerinfo">
@@ -145,6 +153,6 @@
         <p class="copyright">©Copyright The Auction</p>
       </div>
     </footer>
-    <script type="module" src="/js/script.js"></script>
+    <script type="module" src="/js/login.js"></script>
   </body>
 </html>

@@ -1,3 +1,9 @@
+html {
+  font-family:
+    nunito sans regular,
+    sans-serif;
+}
+
 .error {
   color: rgb(212, 24, 24);
 }
@@ -11,6 +17,17 @@
 
 h1 {
   margin-bottom: 3rem;
+}
+
+#emailHelp,
+#passwordHelp {
+  display: none;
+  color: #ae0404;
+}
+
+#logout-btn {
+  display: flex;
+  margin-left: auto;
 }
 
 /*for all pages */
@@ -136,6 +153,29 @@ a {
   justify-content: center;
 }
 
+.display-credit {
+  background-color: #48dcb9;
+  height: 10rem;
+  color: #1f614d;
+}
+
+.display-listings-by-profile {
+  background-color: brown;
+  border: solid black;
+  margin-top: 10rem;
+  height: 10rem;
+}
+
+.create-listing-form {
+  margin-top: 1rem;
+}
+
+h2 {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
 .footer-link {
   color: #ffff;
   text-decoration: none;
@@ -155,7 +195,7 @@ footer {
   height: 22rem;
   width: 100%;
   padding-top: 1rem;
-  margin-top: 1rem;
+  margin-top: 10rem;
 }
 
 .footerinfo {
