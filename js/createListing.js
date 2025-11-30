@@ -1,5 +1,4 @@
 import { CONFIG } from "./config.js";
-console.log(CONFIG);
 import { displayErrorMessage } from "./errorMessage.js";
 import { profilesUrl } from "./credits.js";
 console.log(profilesUrl);
@@ -133,29 +132,29 @@ function createNewListing() {
     }
 
     const newListingTitle = document.querySelector(
-      "#createListingInputTitle"
+      "#createListingInputTitle",
     ).value;
     console.log(newListingTitle);
     const newListingDescription = document.querySelector(
-      "#createListingInputDescription"
+      "#createListingInputDescription",
     ).value;
     console.log(newListingDescription);
     const newListingTags = document.querySelector(
-      "#createListingInputTags"
+      "#createListingInputTags",
     ).value;
     const splitTags = newListingTags.split(",");
     const newTags = splitTags.map((item) => item.trim());
     console.log(newListingTags);
     const newListingImgUrl = document.querySelector(
-      "#createListingInputImageUrl"
+      "#createListingInputImageUrl",
     ).value;
     console.log(newListingImgUrl);
     const newListingImgAlt = document.querySelector(
-      "#createListingInputImageAlt"
+      "#createListingInputImageAlt",
     ).value;
     console.log(newListingImgAlt);
     const newListingDateEnd = document.querySelector(
-      "#createListingInputDateEnd"
+      "#createListingInputDateEnd",
     ).value;
     console.log(newListingDateEnd);
 
@@ -171,6 +170,21 @@ function createNewListing() {
     const newListingUrl = `${apiUrl}/auction/listings`;
 
     postNewListing(newListingUrl, newListingInfo);
+
+    function successUpload(response) {
+      if (response.status === 200) {
+        const successMessage = "Successful upload";
+        const notSuccessMessage = "Error in uploading. Please try again";
+        const successContainer = document.querySelector(".successInfo");
+
+        if (successContainer) {
+          successContainer.textContent = successMessage;
+        }
+      } else {
+        ("Failed to create new listing");
+      }
+    }
+    successUpload();
   });
 }
 
