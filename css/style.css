@@ -4,15 +4,20 @@ html {
     sans-serif;
 }
 
-.error {
-  color: rgb(212, 24, 24);
-}
-
 .login-form {
   margin-bottom: 3rem;
-  /* max-width: 80%; */
+}
+
+.login-form,
+#update-avatar-btn,
+#logout-btn,
+.form-inline,
+.register-link,
+#listing-container,
+.social,
+h2,
+.copyright {
   display: flex;
-  /* align-items: center; */
 }
 
 h1 {
@@ -20,7 +25,6 @@ h1 {
 }
 
 #update-avatar-btn {
-  display: flex;
   margin-left: auto;
 }
 
@@ -35,11 +39,8 @@ h1 {
 }
 
 #logout-btn {
-  display: flex;
   margin-left: auto;
 }
-
-/*for all pages */
 
 .btn-primary {
   --bs-btn-bg: #1f614d;
@@ -73,23 +74,17 @@ main {
   padding: 1rem;
 }
 
-/* .navbar-colour {
-  --bs-white: #fff;
-} */
-
-/* .navbar-nav {
-  justify-content: center;
-  margin: auto;
-} */
-
 .nav-link {
   font-size: 1.5rem;
   margin-left: 3rem;
 }
 
-.form-inline {
+footer,
+.form-inline,
+.not-registered {
   background-color: #1f614d;
-  display: flex;
+}
+.form-inline {
   padding: 1rem;
   width: 100%;
   align-items: center;
@@ -107,32 +102,12 @@ main {
   height: 2.2rem;
 }
 
-/* .navbar-toggler {
-  height: 2.5rem;
-  margin-left: auto;
-} */
-
-/* .navbar-toggler-icon {
-  color: blue;
-} */
-
 .bi-person {
   font-size: 2.2rem;
-  color: #1f614d;
   padding-right: 1rem;
 }
 
-/* .container-fluid {
-  height: 3rem;
-} */
-
-/* .nav-elements {
-  display: flex;
-  justify-content: flex-end;
-} */
-
 .register-link {
-  display: flex;
   gap: 1rem;
 }
 
@@ -142,14 +117,6 @@ main {
 
 .not-registered {
   padding-right: 10rem;
-  background-color: #1f614d;
-}
-
-a {
-  color: #1f614d;
-}
-
-.single-listing-heading {
 }
 
 #listing-container img {
@@ -158,12 +125,16 @@ a {
 }
 
 #listing-container {
-  display: flex;
   justify-content: center;
 }
 
 .display-credit {
   height: 5rem;
+}
+
+.display-credit,
+.bi-person,
+a {
   color: #1f614d;
 }
 
@@ -180,7 +151,6 @@ a {
 
 h2 {
   margin-top: 5rem;
-  display: flex;
   justify-content: center;
 }
 
@@ -199,7 +169,6 @@ a:hover {
 }
 
 footer {
-  background-color: #1f614d;
   height: 22rem;
   width: 100%;
   padding-top: 1rem;
@@ -212,7 +181,6 @@ footer {
 }
 
 .social {
-  display: flex;
   justify-content: center;
 }
 
@@ -233,6 +201,5 @@ footer {
 .copyright {
   padding-top: 2rem;
   justify-content: center;
-  display: flex;
   padding-bottom: 1rem;
 }
