@@ -19,6 +19,15 @@ h1 {
   margin-bottom: 3rem;
 }
 
+#update-avatar-btn {
+  display: flex;
+  margin-left: auto;
+}
+
+#new-bid-btn {
+  border-radius: 10px;
+}
+
 #emailHelp,
 #passwordHelp {
   display: none;
@@ -154,7 +163,7 @@ a {
 }
 
 .display-credit {
-  height: 10rem;
+  height: 5rem;
   color: #1f614d;
 }
 

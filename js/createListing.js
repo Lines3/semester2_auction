@@ -102,7 +102,7 @@ export async function getAvatar() {
   }
 }
 
-// getAvatar();
+getAvatar();
 
 function createNewListing() {
   createListingButton?.addEventListener("click", (event) => {

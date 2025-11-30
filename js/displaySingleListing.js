@@ -14,7 +14,6 @@ export function userLoggedIn() {
     displayBids();
     displayListing();
   } else {
-    const userNotLoggedIn = document.querySelector(".notLoggedIn");
     window.location.href = "/login.html";
   }
 }
@@ -28,8 +27,6 @@ export function getParam(param) {
   console.log(value);
   return params.get(param);
 }
-
-// getParam("id");
 
 export async function getListing(id) {
   if (!id) {
@@ -96,8 +93,6 @@ export async function displayBids() {
 
 displayBids();
 
-//jjjj
-
 export function updateHeading(newHeading) {
   const heading = document.querySelector("h1");
   if (heading) {
@@ -123,8 +118,15 @@ export function updateBidAmount(newBids) {
   }
 }
 
+export function updateEndsAt(newEndsAt) {
+  const endsAt = document.querySelector("h4");
+  if (endsAt) {
+    endsAt.textContent = `Bidding ends at: ${newEndsAt}`;
+  }
+}
+
 export function updateBidder(newBidder) {
-  const showbids = document.querySelector("h4");
+  const showbids = document.querySelector("h5");
   if (showbids) {
     showbids.textContent = `Name of bidder: ${newBidder}`;
   }
@@ -150,18 +152,20 @@ export async function displayListing() {
 
   try {
     const listing = await getListing(id);
+    console.log(listing);
 
     const { title } = listing.data;
     const { description } = listing.data;
+    const { endsAt } = listing.data;
     console.log(description);
     console.log(listing);
     updateHeading(title);
     updateTitle(title);
     renderListing(container, listing.data.media[0]);
     updateDescription(description);
+    updateEndsAt(endsAt);
   } catch (error) {
     console.log(error);
     displayErrorMessage();
   }
 }
-displayListing();

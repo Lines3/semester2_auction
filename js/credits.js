@@ -18,14 +18,14 @@ export function getParam(param) {
 export async function displayCredits() {
   try {
     const name = getParam("name");
-    // console.log(name);
+    console.log(name);
 
     const token = localStorage.getItem("accessToken");
-    // console.log(token);
+    console.log(token);
     const getName = JSON.parse(localStorage.getItem("data"));
-    // console.log(getName.name);
+    console.log(getName.name);
     const creditUrlName = `${profilesUrl}/${getName.name}`;
-    // console.log(creditUrl);
+    // // console.log(creditUrl);
     const fetchOptions = {
       method: "GET",
       headers: {
@@ -34,22 +34,26 @@ export async function displayCredits() {
         "X-Noroff-API-Key": CONFIG.apiKey,
       },
     };
-    // console.log(fetchOptions);
+    console.log(fetchOptions);
     const response = await fetch(creditUrlName, fetchOptions);
-    // console.log(response);
+    console.log(response);
     const json = await response.json();
-    // console.log(json);
+    console.log(json);
     const data = json.data;
-    // console.log(data);
+    console.log(data);
 
     const creditContainer = document.querySelector(".credit-container");
     const creditCard = document.createElement("div");
+    const creditTitle = document.createElement("div");
     creditCard.classList.add("display-credit");
     creditCard.textContent = data.credits;
+    creditTitle.classList.add("display-credit-title");
+    creditTitle.textContent = "Total credits:";
 
-    creditContainer?.appendChild(creditCard);
+    creditTitle.appendChild(creditCard);
+    creditContainer?.appendChild(creditTitle);
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     displayErrorMessage();
   }
 }
